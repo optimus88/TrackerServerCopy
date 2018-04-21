@@ -29,6 +29,7 @@ $tally_team_name= $row['tally_team_name'];
 <input type="hidden" value="<?php echo $row['tally_transc_id']; ?>" name="tally_transc_id" id="tally_transc_id" />
 <tr>
 <td>
+      <label>UserName</label>
       <label><?php echo $bidder_name;?> </label>                      
 </td> 
 <td>
