@@ -92,7 +92,8 @@ if ($bidderNetTransactionList == true || $bidderNetTransactionList != null)
 </form>
 <br />
 <a href="new_report.php?Pid=<?php echo $bidderId;?> "><i>Click Here</i></a>for the Report
-
+<br />
+<a href="new_report_1.php?Pid=<?php echo $bidderId;?> "><i>Click Here</i></a>for the Report
 
            </div>
 		</div>

@@ -11,14 +11,14 @@ if(isset($_SESSION['admin']) || isset($_SESSION['guest']))
             INNER JOIN tally_net_transaction tnt ON tb.bidder_id=tnt.tally_net_bidder_name
             INNER JOIN tally_match_details tmd ON tmd.match_details_id=tnt.tally_net_match_details_id_fk
             INNER JOIN tally_transaction_details ttd ON ttd.tally_transc_id=tnt.tally_net_transc_details_id_fk
-            WHERE tb.bidder_id=$matchIdValue";
+            WHERE tb.bidder_id='$matchIdValue' AND YEAR(tmd.tally_match_date)= 2018";
             
             //echo $calculateQuery;
 
     $result=$ob->fetch_values($calculateQuery);
     if (!$result) die('Couldn\'t fetch records');
     $num_fields = mysql_num_fields($result);
-    $headers = array();
+    $header = array();
 	//$headers[] = array("Net Amount","Bidder's Name","Date of Bidding","Winner Of the Match", "Bidder's Team");
 
 	
@@ -31,7 +31,7 @@ if(isset($_SESSION['admin']) || isset($_SESSION['guest']))
     if ($fp && $result)
     {
               header('Content-Type: text/csv');
-              header('Content-Disposition: attachment; filename="export.csv"');
+              header('Content-Disposition: attachment; filename="report.csv"');
               header('Pragma: no-cache');
               header('Expires: 0');
               fputcsv($fp, $headers);
