@@ -25,7 +25,7 @@ $matchDetailsInsertQuery = " INSERT INTO tally_match_details (tally_team1,tally_
 $result = $ob-> insert($matchDetailsInsertQuery);
     if($result == "true")
     {
-        echo '<script>alert("Record successfully inserted..!!!"); </script>';
+        echo '<script>alert("Record successfully inserted..!!!"); window.location = "match_list.php"</script>';
         
     }
     else
@@ -59,19 +59,7 @@ $result = $ob-> insert($matchDetailsInsertQuery);
             </div>
 		</div>
 		<!-- end #content -->
-		<div id="sidebar">
-			<ul>
-                <li>
-					<h2>News Updates :</h2>
-					<ul>
-                        <li><img src="images/teamLogo/delhi.png"/>VS<img src="images/teamLogo/guj.png"/></li>
-                        <li><img src="images/teamLogo/kkr.png"/><img src="images/teamLogo/mi.png"/></li>
-                        <li><img src="images/teamLogo/pune.png"/><img src="images/teamLogo/punjab.png"/></li>
-                        <li><img src="images/teamLogo/rcb.png"/><img src="images/teamLogo/srh.png"/></li>
-                   </ul>
-                </li>
-			</ul>
-		</div>
+        <?php include ('sidebar_teamLogo.php'); ?>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>

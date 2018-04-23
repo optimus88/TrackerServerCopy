@@ -80,14 +80,14 @@ if(isset($_POST['submit_match_details_selection']))
 		
 							<select name="matchVenue" id="matchVenue" >
                             <option value="select" >-----------------Select-----------------</option>
-							<option value="Delhi">Delhi</option>
-							<option value="Punjab">Punjab</option>
-							<option value="Chennai">Chennai</option>
-                            <option value="Mumbai">Mumbai</option>
-							<option value="Kolkata">Kolkata</option>	
-							<option value="Hydrabad">Hydrabad</option>
-							<option value="Rajsthan">Rajsthan</option>
 							<option value="Bangalore">Bangalore</option>
+							<option value="Chennai">Chennai</option>
+							<option value="Delhi">Delhi</option>
+                            <option value="Hydrabad">Hydrabad</option>
+							<option value="Kolkata">Kolkata</option>	
+							<option value="Mumbai">Mumbai</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajsthan">Rajsthan</option>
                             </select>
 							
 </td> 
