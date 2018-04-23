@@ -8,9 +8,9 @@ $ob = new blogic();
 $transactionID=$_GET["id"];
 $palyerID=$_GET["pid"];
 $eventEdit=$_GET["event"];
-//echo $matchID;
 $transcSelectQuery = "SELECT tally_bidder_name,tally_transc_id,bidder_name,bidder_id,tally_amt,tally_rate,tally_team_name FROM tally_transaction_details,tally_bidders WHERE tally_transc_id='$transactionID' AND bidder_id='$palyerID'";
 //echo $teamSelectQuery;
+//include ('sql_Queries.properties');
 $result1 = $ob-> fetch_values($transcSelectQuery);
 $row = mysqli_fetch_array($result1);
 $bidder_name= $row['bidder_name'];
@@ -34,7 +34,7 @@ $tally_team_name= $row['tally_team_name'];
 </tr>
 <tr>
       <td><input type="hidden" value="<?php echo $row['tally_transc_id']; ?>" name="tally_transc_id" id="tally_transc_id" />
-          <label style="font-weight: bold;"><?php echo "$bidder_name";?> </label></td>
+          <label style="font-weight: bold;"><?php echo ucfirst("$bidder_name");?> </label></td>
       <td><label style="font-weight: bold;"><?php echo $tally_team_name;?></label></td>
       <td><input type="text" name="rate" id="rate" size="10px" value="<?php echo $tally_rate;?>" /></td>
       <td><input type="text" name="initialAmount" size="10px" id="initialAmount" value="<?php echo $tally_amt;?>" />
