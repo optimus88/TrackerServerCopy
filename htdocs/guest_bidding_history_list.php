@@ -12,6 +12,7 @@ if(isset($_SESSION['guest']))
 	  if ($resultBiddersDetails == true || $resultBiddersDetails != null)
 		{
 ?>
+<form>
 <table class="login-page" style="width: 90%;">
 <th colspan="6" ><h3><i>Your Bidding Details :</i></h3></th>
 <tr style="font-size: 16px;"><td ><b>Bidder Name</b></td><td><b>Bidding Team</b></td><td><b>Bidding Ratio</b></td><td><b>Bidding Amount:</b></td><td><b>Result:</b></td><td><b>Net Amount:</b></td></tr>
@@ -43,7 +44,8 @@ while ($row = mysqli_fetch_array($resultBiddersDetails))
  {?>
     <tr><td><?php echo $biddersName; ?> </td><td><?php echo $BiddersTeanName; ?></td><td><?php echo $BiddingRate; ?></td><td><?php echo $BiddingAmount; ?></td>
     <td><?php echo $result_final;?></td><td><?php echo $netAmount;?></td></tr>
-    <!--</fieldset>--!> 
+    <!--</fieldset>--!>
+    </table></form>
  <?php }
     else 
         {
@@ -51,7 +53,7 @@ while ($row = mysqli_fetch_array($resultBiddersDetails))
 
 <tr><td><?php echo $biddersName; ?> </td><td><?php echo $BiddersTeanName; ?></td><td><?php echo $BiddingRate; ?></td><td><?php echo $BiddingAmount; ?></td>
 <td><a href="edit_n_delete.php?id=<?php echo $transc_id;?>&pid=<?php echo $bidderId;?> ">Edit</a></td><td><a href="edit_n_delete.php">Delete</a></td></tr>
-</table>
+</table></form>
 <?php 
     } 
     }

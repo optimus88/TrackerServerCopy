@@ -19,7 +19,7 @@ else
 	}; 
 $start_from = ($page-1) * $num_rec_per_page; 
 //$matchListDisplay = "SELECT * FROM tally_match_details ORDER BY tally_match_date DESC ";
-$matchListDisplay = "SELECT * FROM tally_match_details WHERE YEAR(tally_match_date)= 2017 ORDER BY tally_match_date DESC LIMIT $start_from, $num_rec_per_page ";
+$matchListDisplay = "SELECT * FROM tally_match_details WHERE YEAR(tally_match_date)= 2018 ORDER BY tally_match_date DESC LIMIT $start_from, $num_rec_per_page ";
 $matchDetailsList = $ob-> fetch_values($matchListDisplay);
 ?>
 
@@ -66,7 +66,7 @@ if ( $flag_value == "Decided" )
 <tr><td colspan="6" style="text-decoration: none; padding-left: 150px;">
 <?php
 // ===== Pagination code for the Guest series listing ===== //
-$sqlRecord = "SELECT * FROM tally_match_details WHERE YEAR(tally_match_date)= 2017"; 
+$sqlRecord = "SELECT * FROM tally_match_details WHERE YEAR(tally_match_date)= 2018"; 
 $rs_result = $ob-> fetch_values($sqlRecord); //run the query
 $total_records = mysqli_num_rows($rs_result);  //count number of records
 $total_pages = ceil($total_records / $num_rec_per_page); 
@@ -90,19 +90,7 @@ echo "<a href='guest_match_list.php?page=$total_pages'>".'| Last Page'."</a> ";
             </div>
 		</div>
 		<!-- end #content -->
-		<div id="sidebar">
-			<ul>
-                <li>
-					<h2>News Updates :</h2>
-					<ul>
-                        <li><img src="images/teamLogo/delhi.png"/><img src="images/teamLogo/guj.png"/></li>
-                        <li><img src="images/teamLogo/kkr.png"/><img src="images/teamLogo/mi.png"/></li>
-                        <li><img src="images/teamLogo/pune.png"/><img src="images/teamLogo/punjab.png"/></li>
-                        <li><img src="images/teamLogo/rcb.png"/><img src="images/teamLogo/srh.png"/></li>
-                   </ul>
-                </li>
-			</ul>
-		</div>
+        <?php include ('sidebar_teamLogo.php'); ?>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>

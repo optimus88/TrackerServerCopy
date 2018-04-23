@@ -76,7 +76,7 @@ else
 $start_from = ($page-1) * $num_rec_per_page; 
 //$sql = "SELECT * FROM student LIMIT $start_from, $num_rec_per_page"; 
 //$rs_result = mysql_query ($sql); //run the query    
-$matchListDisplay = "SELECT * FROM tally_match_details WHERE tally_series_type='$series_name' AND YEAR(tally_match_date)= 2017 ORDER BY tally_match_date DESC LIMIT $start_from, $num_rec_per_page ";
+$matchListDisplay = "SELECT * FROM tally_match_details WHERE tally_series_type='$series_name' AND YEAR(tally_match_date)= 2018 ORDER BY tally_match_date DESC LIMIT $start_from, $num_rec_per_page ";
 $matchDetailsList = $ob-> fetch_values($matchListDisplay);
 ?>
 <br />
@@ -127,7 +127,7 @@ if ( $flag_value == "Decided" )
 //===== Pagination Code here (NEW) ================
 
  
-$sql = "SELECT * FROM tally_match_details WHERE tally_series_type='$series_name' AND YEAR(tally_match_date)= 2017"; 
+$sql = "SELECT * FROM tally_match_details WHERE tally_series_type='$series_name' AND YEAR(tally_match_date)= 2018"; 
 $rs_result = $ob-> fetch_values($sql); //run the query
 $total_records = mysqli_num_rows($rs_result);  //count number of records
 $total_pages = ceil($total_records / $num_rec_per_page); 

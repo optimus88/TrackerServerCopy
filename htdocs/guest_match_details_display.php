@@ -21,22 +21,30 @@ if ($result1 == "false" || $result1 == null)
         $matchType= $row['tally_match_type'];
         $matchVenue= $row['tally_match_venue'];
         $matchdate= $row['tally_match_date'];
-        }?>
-        <form>    
+       
+
+	   }
+?>
+        <form>
             <table class="login-page" style="width: 90%;">
-            <th colspan="4" ><h3><i>Match Details :</i></h3></th>
-            <tr>
-            <td><b>Match</b></td><td><b>Match Date :</b></td><td><label><b>Match Type :</b></label></td><td><label><b>Match Venue :</b></label></td>
-            </tr><tr>
-            <td><?php echo "$teamName_1"?> vs <?php echo "$teamName_2"?></td>
-            <td><label><?php echo "$matchdate" ?></label></td>
-            <td><label><?php echo "$matchType" ?></label></td>
-            <td><label><?php echo "$matchVenue" ?></label></td>
-            </tr>
+                <th colspan="4" ><h3><i>Match Details :</i></h3></th>
+
+                    <tr>
+                    <td><b>Match</b></td><td><b>Match Date :</b></td><td><label><b>Match Type :</b></label></td><td><label><b>Match Venue :</b></label></td>
+
+                    </tr>
+                    <tr>
+                    <td><?php echo "$teamName_1"?> vs <?php echo "$teamName_2"?></td>
+                    <td><label><?php echo "$matchdate" ?></label></td>
+                    <td><label><?php echo "$matchType" ?></label></td>
+                    <td><label><?php echo "$matchVenue" ?></label></td>
+
+                    </tr>
             </table>
-         </form>   
+
+        </form><br />  
         <form action="match_result.php" method="post" >
-            <table>
+            <table style="width: 90%;">
                 <tr>
                 <td><input type="hidden" value="<?php echo $match_id ; ?>" id="match_details_id" name="match_details_id" /></td>
                 <td><input type="hidden" value="<?php echo "$teamName_1"?>" id="teamName1" name="teamName1" /></td>
@@ -68,6 +76,7 @@ if ($result1 == "false" || $result1 == null)
         $matchdate= $row['tally_match_date'];
 
 ?>
+<form>
 <table class="login-page" style="width: 90%;">
 <th colspan="4" ><h3><i>Match Details :</i></h3></th>
     <tr>
@@ -84,43 +93,31 @@ if ($result1 == "false" || $result1 == null)
      
 ?>
 </table>
+</form>
 <br />
 
-<!-- REmOVED FROM HERE --!>
+
+<!-- REmOVED FROM HERE -->
 <?php 
 //echo $match_id;
     if ($match_id != null && $match_id > 0)
     {
         include ('bidders_in_the_game.php');
     }
-    } ?>
+} ?>
     
-
 <div style="clear: both;">&nbsp;</div>
             </div>
 		</div>
             	      
 		<!-- end #content -->
-		<div id="sidebar">
-			<ul>
-                <li>
-					<h2>News Updates :</h2>
-					<ul>
-                        <li><img src="images/teamLogo/delhi.png"/>VS<img src="images/teamLogo/guj.png"/></li>
-                        <li><img src="images/teamLogo/kkr.png"/><img src="images/teamLogo/mi.png"/></li>
-                        <li><img src="images/teamLogo/pune.png"/><img src="images/teamLogo/punjab.png"/></li>
-                        <li><img src="images/teamLogo/rcb.png"/><img src="images/teamLogo/srh.png"/></li>
-                   </ul>
-                </li>
-			</ul>
-		</div>
+        <?php include ('sidebar_teamLogo.php'); ?>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>
 	<div class="container"></div>
 	<!-- end #page -->
-    </div>
+
 <?php 
 }
-include ('footer.php');
-?>
+include ('footer.php'); ?>

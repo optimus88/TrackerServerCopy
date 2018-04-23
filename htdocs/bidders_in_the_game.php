@@ -33,19 +33,7 @@ while ($row = mysqli_fetch_array($resultBiddersDetails))
             </div>
 		</div>
 		<!-- end #content -->
-		<div id="sidebar">
-			<ul>
-                <li>
-					<!--<h2>News Updates :</h2>-->
-					<ul>
-                        <!--<li><img src="images/login_1.png" width="280px" height="280px"/></li>
-                        <li><img src="images/teamLogo/kkr.png"/><img src="images/teamLogo/mi.png"/></li>
-                        <li><img src="images/teamLogo/pune.png"/><img src="images/teamLogo/punjab.png"/></li>
-                        <li><img src="images/teamLogo/rcb.png"/><img src="images/teamLogo/srh.png"/></li>
-                   </ul>-->
-                </li>
-			</ul>
-		</div>
+        <?php include ('sidebar_teamLogo.php'); ?>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>

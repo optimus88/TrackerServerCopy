@@ -25,7 +25,7 @@ include ('sudo_header.php');
             INNER JOIN tally_net_transaction tnt ON tb.bidder_id=tnt.tally_net_bidder_name
             INNER JOIN tally_match_details tmd ON tmd.match_details_id=tnt.tally_net_match_details_id_fk
             INNER JOIN tally_transaction_details ttd ON ttd.tally_transc_id=tnt.tally_net_transc_details_id_fk
-            WHERE tb.bidder_id=$bidderId AND YEAR(tmd.tally_match_date)= 2017";
+            WHERE tb.bidder_id=$bidderId AND YEAR(tmd.tally_match_date)= 2018";
          }
          else
          {
@@ -34,7 +34,7 @@ include ('sudo_header.php');
                                 INNER JOIN tally_net_transaction tnt ON tb.bidder_id=tnt.tally_net_bidder_name
                                 INNER JOIN tally_match_details tmd ON tmd.match_details_id=tnt.tally_net_match_details_id_fk
                                 INNER JOIN tally_transaction_details ttd ON ttd.tally_transc_id=tnt.tally_net_transc_details_id_fk
-                                WHERE tb.bidder_id=$bidderId AND YEAR(tmd.tally_match_date)= 2017 AND tnt.tally_net_tranc_mdate BETWEEN $d1 AND $d2";
+                                WHERE tb.bidder_id=$bidderId AND YEAR(tmd.tally_match_date)= 2018 AND tnt.tally_net_tranc_mdate BETWEEN $d1 AND $d2";
 
             
          }
@@ -97,19 +97,20 @@ if ($bidderNetTransactionList == true || $bidderNetTransactionList != null)
            </div>
 		</div>
 		<!-- end #content -->
-		<div id="sidebar">
+        <?php include ('sidebar_teamLogo.php'); ?>
+		<!--<div id="sidebar">
 			<ul>
                 <li>
 					<h2>News Updates :</h2>
 					<ul>
-                        <li><img src="images/teamLogo/delhi.png"/>VS<img src="images/teamLogo/guj.png"/></li>
+                        <li><img src="images/teamLogo/delhi.png"/><img src="images/teamLogo/guj.png"/></li>
                         <li><img src="images/teamLogo/kkr.png"/><img src="images/teamLogo/mi.png"/></li>
                         <li><img src="images/teamLogo/pune.png"/><img src="images/teamLogo/punjab.png"/></li>
                         <li><img src="images/teamLogo/rcb.png"/><img src="images/teamLogo/srh.png"/></li>
                    </ul>
                 </li>
 			</ul>
-		</div>
+		</div> -->
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>
