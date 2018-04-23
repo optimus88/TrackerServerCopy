@@ -7,7 +7,8 @@ include('blogic.php');
 $ob = new blogic();
 $transactionID=$_GET["id"];
 $palyerID=$_GET["pid"];
-$eventEdit=$_GET["event"];
+$eventDel=$_GET["evnt"];
+$matchId=$_GET["mid"];
 $transcSelectQuery = "SELECT tally_bidder_name,tally_transc_id,bidder_name,bidder_id,tally_amt,tally_rate,tally_team_name FROM tally_transaction_details,tally_bidders WHERE tally_transc_id='$transactionID' AND bidder_id='$palyerID'";
 //echo $teamSelectQuery;
 //include ('sql_Queries.properties');
@@ -20,10 +21,12 @@ $tally_rate= $row['tally_rate'];
 $tally_transc_id= $row['tally_transc_id'];
 $tally_team_name= $row['tally_team_name'];
 }
+if ($eventDel != "del")
+{
 ?>
 <!-- Here is the player addition form -->
 <fieldset>
-<legend>Edit Player Details : </legend>
+<legend style="font-size: 22px; font-weight: bold;">Edit Player Details : </legend>
 <form id="myForm" action="sudo_edit_bidders.php"  name="myForm" method="post" onsubmit="return follow_up_validate();" >
 <table class="match-details">
 <th colspan="4" ><h3><i>Edit Bidder Details :</i></h3></th>
@@ -35,6 +38,7 @@ $tally_team_name= $row['tally_team_name'];
 </tr>
 <tr>
       <td><input type="hidden" value="<?php echo $row['tally_transc_id']; ?>" name="tally_transc_id" id="tally_transc_id" />
+          <input type="hidden" value="<?php echo $matchId; ?>" name="matchId" id="matchId" />
           <label style="font-weight: bold;"><?php echo ucfirst("$bidder_name");?> </label></td>
       <td><label style="font-weight: bold;"><?php echo $tally_team_name;?></label></td>
       <td><input type="text" name="rate" id="rate" size="10px" value="<?php echo $tally_rate;?>" /></td>
@@ -49,8 +53,8 @@ $tally_team_name= $row['tally_team_name'];
 
 <tr>
                       
-                      <td colspan="4">
-                        <input style="alignment-adjust: central;" class="styled-button-1" type="submit" name="edit_submit" value="SAVE" />
+                      <td colspan="4" style="alignment-adjust: right;">
+                        <input class="styled-button-1" type="submit" name="edit_submit" value="SAVE" />
                         <input class="styled-button-1" type="button" value="BACK" onclick="window.history.go(-1); return false;" />
                         <!-- <input type="reset" name="Cancel" value="Cancel" /> -->
                        </td>
@@ -69,4 +73,24 @@ $tally_team_name= $row['tally_team_name'];
 	<div class="container"></div>
 	<!-- end #page -->
 </div>
-<?php include ('sudo_footer_1.php'); ?>
+
+<?php
+}
+else
+{
+        
+        //$transactionID=$_GET["transc_id"];
+        //$getMatch_ID=$_GET["m_id"];
+        $deleteQuery="DELETE FROM tally_transaction_details WHERE tally_transc_id='$transactionID'";
+        $resultDeleteQuery=$ob-> update_result($deleteQuery);
+        if ( $resultDeleteQuery == 'true' )
+           {
+               echo '<script>alert("Transaction has been executed successfully..!!"); window.location = "match_details_player_addition_1.php?id=' . $matchId .'"</script>';
+           }
+        else
+            {
+               echo '<script>alert("Sorry..!!! Could not delete the Bidder Details..!!!"); window.location = "match_list.php"</script>';
+            }
+}
+
+ include ('sudo_footer_1.php'); ?>

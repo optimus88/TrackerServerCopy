@@ -24,7 +24,7 @@ while ($row = mysqli_fetch_array($resultBiddersDetails))
 ?>
 
 <tr><td><?php echo $biddersName; ?> </td><td><?php echo $BiddersTeanName; ?></td><td><?php echo $BiddingRate; ?></td><td><?php echo $BiddingAmount; ?></td>
-<td><a href="edit_n_delete.php?id=<?php echo $transc_id;?>&pid=<?php echo $bidderId;?> ">Edit</a></td><td><a href="edit_n_delete.php">Delete</a></td></td>
+<td><a href="edit_n_delete.php?id=<?php echo $transc_id;?>&pid=<?php echo $bidderId;?>&mid=<?php echo $matchIdValue;?> ">Edit</a></td><td><a onclick="return confirm('Are you sure, you want to delete it?')" href="edit_n_delete.php?id=<?php echo $transc_id;?>&evnt=del&mid=<?php echo $matchIdValue;?> ">Delete</a></td></td>
 </tr>
 <?php 
     }?>

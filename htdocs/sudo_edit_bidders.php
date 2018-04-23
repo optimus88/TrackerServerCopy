@@ -8,6 +8,8 @@ $ob = new blogic();
 if(isset($_POST['edit_submit']))
 {
 $transactionID=$_POST["tally_transc_id"];
+$match_ID=$_POST["matchId"];
+echo $match_ID;
 $rate=$_POST["rate"];
 $event=$_POST["event"];
 $initialAmount=$_POST["initialAmount"];
@@ -17,7 +19,9 @@ $updateResult=$ob-> update_result($updateQuery);
 //echo "Result of the updateQuery $updateResult";
 if ($updateResult > 0 )
             {
-                echo '<script>alert("Details Updated..!!!!"); window.location = "match_list.php"</script>';
+                //echo '<script>alert("Details Updated..!!!!"); window.location = "match_list.php"</script>';
+                echo '<script>alert("Details Updated..!!!!"); window.location = "match_details_player_addition_1.php?id=' . $match_ID .'"</script>';
+                
             }
             else
                 {
