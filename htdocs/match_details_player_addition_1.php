@@ -123,7 +123,12 @@ if ($result1 == "false" || $result1 == null)
 		</div>
             	      
 		<!-- end #content -->
-        <?php include ('sidebar_teamLogo.php'); ?>
+        <?php
+        if ($resultBiddersDetails != true)
+        {
+            include ('sidebar_teamLogo.php'); 
+        } ?>
+         
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>

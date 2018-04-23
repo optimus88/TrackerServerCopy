@@ -26,6 +26,7 @@ $tally_team_name= $row['tally_team_name'];
 <legend>Edit Player Details : </legend>
 <form id="myForm" action="sudo_edit_bidders.php"  name="myForm" method="post" onsubmit="return follow_up_validate();" >
 <table class="match-details">
+<th colspan="4" ><h3><i>Edit Bidder Details :</i></h3></th>
 <tr>
     <td><label style="font-weight: bold;">Bidder Name :</label></td>
     <td><label style="font-weight: bold;">Bidding Team :</label></td>
@@ -57,4 +58,15 @@ $tally_team_name= $row['tally_team_name'];
 </table>
 </form>
 </fieldset>
+
+            </div>
+		</div>
+		<!-- end #content -->
+        <?php include ('sidebar_teamLogo.php'); ?>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<div class="container"></div>
+	<!-- end #page -->
+</div>
 <?php include ('sudo_footer_1.php'); ?>

@@ -25,7 +25,7 @@ $matchDetailsInsertQuery = " INSERT INTO tally_match_details (tally_team1,tally_
 $result = $ob-> insert($matchDetailsInsertQuery);
     if($result == "true")
     {
-        echo '<script>alert("Record successfully inserted..!!!"); window.location = "match_list.php"</script>';
+        echo '<script>alert("Record successfully inserted..!!!"); </script>';
         
     }
     else
@@ -56,6 +56,8 @@ $result = $ob-> insert($matchDetailsInsertQuery);
 </tr>
 </table>
 </form>
+<br/>
+<p style="font-family: Monotype Corsiva,arial,sans-serif; font-size:20px;"><a href="match_list.php">"Click ME Please" </a>for the Match List</p>
             </div>
 		</div>
 		<!-- end #content -->
