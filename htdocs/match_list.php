@@ -150,7 +150,8 @@ echo "<a href='match_list.php?page=$total_pages&seriesName=".$series_name."'>".'
             </div>
 		</div>
 		<!-- end #content -->
-		<div id="sidebar">
+        <?php include ('sidebar_teamLogo.php'); ?>
+		<!--<div id="sidebar">
 			<ul>
                 <li>
 					<h2>News Updates :</h2>
@@ -162,7 +163,7 @@ echo "<a href='match_list.php?page=$total_pages&seriesName=".$series_name."'>".'
                    </ul>
                 </li>
 			</ul>
-		</div>
+		</div> -->
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>
