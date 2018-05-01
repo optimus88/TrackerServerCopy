@@ -52,6 +52,7 @@ $(function(){
                 <li class="current_page_item" ><a>Welcome <?php echo $_SESSION['admin']; ?>,</a></li>
                 <li><a href="sudo_welcome.php">Homepage</a></li>
                 <li><a href="guest_welcome.php">Reports</a></li>
+                <li><a href="profile.php">Profile</a></li>
                 <li><a href="logout.php">Log Out</a></li>
 				<!--<li class="current_page_item"><a href="index.php">Homepage</a></li>
 				<li class="current_page_item"><a href="#">Blog</a></li>
